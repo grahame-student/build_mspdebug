@@ -11,6 +11,24 @@ Index: libmsp430/DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp
  	port = new boost::asio::serial_port(*ioService);
  	timer = new boost::asio::deadline_timer(*ioService);
  
+@@ -384,7 +384,7 @@
+ 		int retry = 5;
+ 		while (ec && --retry )
+ 		{
+-			this_thread::sleep_for(chrono::milliseconds(5));
++			this_thread::sleep_for(boost::asio::chrono::milliseconds(5));
+ 			ec = port->open(portInfo.path, ec);
+ 		}
+ 
+@@ -409,7 +409,7 @@
+ 	{
+ 		openPort();
+ 		//Seeing issues on some platforms (eg. Ubuntu) when port is immediately closed again
+-		this_thread::sleep_for(chrono::milliseconds(100));
++		this_thread::sleep_for(boost::asio::chrono::milliseconds(100));
+ 		close();
+ 	}
+ }
 Index: libmsp430/DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.h
 ===================================================================
 --- libmsp430/DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.h	(revision 27319)
