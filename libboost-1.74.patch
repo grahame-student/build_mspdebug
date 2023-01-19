@@ -1,0 +1,39 @@
+Index: libmsp430/ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceSerialUART.cpp
+===================================================================
+--- libmsp430/ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceSerialUART.cpp	(revision 27319)
++++ libmsp430/ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceSerialUART.cpp	(working copy)
+@@ -193,27 +193,27 @@
+     
+ 	port->set_option(RESETControl(LOW_SIGNAL));
+ 	port->set_option(TESTControl(LOW_SIGNAL));
+-	this_thread::sleep_for(chrono::milliseconds(10));
++	this_thread::sleep_for(boost::asio::chrono::milliseconds(10));
+ 	port->set_option(TESTControl(HIGH_SIGNAL));
+-	this_thread::sleep_for(chrono::milliseconds(10));
++	this_thread::sleep_for(boost::asio::chrono::milliseconds(10));
+ 	port->set_option(TESTControl(LOW_SIGNAL));
+-	this_thread::sleep_for(chrono::milliseconds(10));
++	this_thread::sleep_for(boost::asio::chrono::milliseconds(10));
+ 	port->set_option(TESTControl(HIGH_SIGNAL));
+-	this_thread::sleep_for(chrono::milliseconds(10));
++	this_thread::sleep_for(boost::asio::chrono::milliseconds(10));
+ 	if( method == STANDARD_INVOKE )
+ 	{
+ 	  port->set_option(RESETControl(HIGH_SIGNAL));
+-	  this_thread::sleep_for(chrono::milliseconds(10));
++	  this_thread::sleep_for(boost::asio::chrono::milliseconds(10));
+ 	  port->set_option(TESTControl(LOW_SIGNAL));
+ 	}
+ 	else if ( method == BSL_XXXX_INVOKE )
+ 	{
+ 	  port->set_option(TESTControl(LOW_SIGNAL));
+-	  this_thread::sleep_for(chrono::milliseconds(10));
++	  this_thread::sleep_for(boost::asio::chrono::milliseconds(10));
+ 	  port->set_option(RESETControl(HIGH_SIGNAL));
+ 	}
+ 	
+-	this_thread::sleep_for(chrono::milliseconds(250));
++	this_thread::sleep_for(boost::asio::chrono::milliseconds(250));
+ 	
+ }
+ 
