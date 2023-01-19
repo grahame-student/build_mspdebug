@@ -1,3 +1,29 @@
+Index: libmsp430/DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp
+===================================================================
+--- libmsp430/DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp	(revision 27319)
++++ libmsp430/DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp	(working copy)
+@@ -375,7 +375,7 @@
+ 
+ bool UsbCdcIoChannel::openPort()
+ {
+-	ioService = new boost::asio::io_service;
++	ioService = new boost::asio::io_context;
+ 	port = new boost::asio::serial_port(*ioService);
+ 	timer = new boost::asio::deadline_timer(*ioService);
+ 
+Index: libmsp430/DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.h
+===================================================================
+--- libmsp430/DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.h	(revision 27319)
++++ libmsp430/DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.h	(working copy)
+@@ -73,7 +73,7 @@
+ 
+ 		private:
+ 			std::vector<uint8_t> inputBuffer;
+-			boost::asio::io_service* ioService;
++			boost::asio::io_context* ioService;
+ 			boost::asio::serial_port* port;
+ 			boost::asio::deadline_timer* timer;
+ 			ComState comState;
 Index: libmsp430/ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceSerialUART.cpp
 ===================================================================
 --- libmsp430/ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceSerialUART.cpp	(revision 27319)
