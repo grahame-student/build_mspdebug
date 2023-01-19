@@ -39,6 +39,7 @@ jobs:
           
       - name: Build libMSP430
         run: |
+          ls -la .
           make
           sudo make install
           
