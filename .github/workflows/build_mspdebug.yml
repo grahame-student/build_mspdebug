@@ -37,7 +37,7 @@ jobs:
           unzip slac460y.zip
           patch -p1 < ../slac460y-linux.patch
           
-      - name:
+      - name: Build libMSP430
         run: |
           make
           sudo make install
