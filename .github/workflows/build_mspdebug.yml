@@ -17,6 +17,7 @@ jobs:
       - name: Install required libraries
         run: |
           sudo apt-get install libusb-1.0-0-dev libusb-dev
+          apt-cache search libboost
         
       - name: Checkout MSPDebug code
         run: |
