@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Install required libraries
         run: |
-          sudo apt-get install libusb-1.0-dev
+          sudo apt-cache search libusb
         
       - name: Checkout MSPDebug code
         run: |
