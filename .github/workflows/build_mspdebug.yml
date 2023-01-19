@@ -30,28 +30,23 @@ jobs:
       - name: Build MSPDebug
         run: |
           cd mspdebug
-          ls -la .
           make
           sudo make install
           
       - name: Download libMSP430 code and patch
         run: |
           cd mspdebug
-          ls -la .
           wget https://dlbeer.co.nz/articles/slac460y/slac460y-linux.patch
           mkdir libmsp430
           cd libmsp430
-          ls -la .
           wget http://www.ti.com/lit/sw/slac460y/slac460y.zip
           unzip slac460y.zip
           rm slac460y.zip
-          ls -la ..
           patch -p1 < ../slac460y-linux.patch
           patch --binary -p1 < ../libboost-1.74.patch
           
       - name: Build libMSP430
         run: |
-          ls -la .
           cd mspdebug/libmsp430
           make
           sudo make install
