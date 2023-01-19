@@ -25,7 +25,7 @@ jobs:
       - name: Checkout libboost 1.74 patch
         run: |
           git clone https://github.com/grahame-student/build_mspdebug.git
-          mv build_mspdebug/*.patch mspdebug/          
+          mv build_mspdebug/*.patch mspdebug/
       
       - name: Build MSPDebug
         run: |
