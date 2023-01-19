@@ -6,3 +6,4 @@
 *.c text
 *.h text
 *.cpp text
+*.patch text
