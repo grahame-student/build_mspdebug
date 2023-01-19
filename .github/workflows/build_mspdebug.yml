@@ -2,7 +2,7 @@
 name: Build MSPDebug and libMSP430 for linux
 
 on:
-  workflow-dispatch:
+  dispatch-workflow:
 
 jobs:
   build-mspdebug:
