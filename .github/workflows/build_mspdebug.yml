@@ -1,0 +1,21 @@
+---
+name: Build MSPDebug and libMSP430 for linux
+
+on:
+  workflow-dispatch:
+
+jobs:
+  build-mspdebug:
+    name: Build MSPDebug
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout MSPDebug code
+        run: |
+          git clone https://github.com/dlbeer/mspdebug.git
+      
+      - name: Build MSPDebug
+        run: |
+          cd mspdebug
+          make
+          sudo make install
