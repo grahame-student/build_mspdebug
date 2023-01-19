@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install required libraries
+        run: |
+          apt-get install libusb-1.0-dev
+        
       - name: Checkout MSPDebug code
         run: |
           git clone https://github.com/dlbeer/mspdebug.git
