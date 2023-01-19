@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Install required libraries
         run: |
-          sudo apt-get install libusb-1.0-0-dev libusb-dev
+          sudo apt-get install build-essential libusb-1.0-0-dev libusb-dev
         
       - name: Checkout MSPDebug code
         run: |
