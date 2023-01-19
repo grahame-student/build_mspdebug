@@ -50,7 +50,7 @@ jobs:
           patch --binary -p1 < ../libboost-1.74.patch
           
       - name: Build libMSP430
-        run: |        
+        run: |
           ls -la .
           cd mspdebug/libmsp430
           make
