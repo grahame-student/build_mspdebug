@@ -6,4 +6,6 @@
 *.c text
 *.h text
 *.cpp text
-*.patch text
+
+# Declare files that will always have CRLF line endings on checkout.
+*.patch text eol=crlf
