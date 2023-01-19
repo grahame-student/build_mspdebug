@@ -37,3 +37,16 @@ Index: libmsp430/ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_Phy
  	
  }
  
+Index: libmsp430/ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceUSB.h
+===================================================================
+--- libmsp430/ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceUSB.h	(revision 27319)
++++ libmsp430/ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceUSB.h	(working copy)
+@@ -38,7 +38,7 @@
+ 
+ #pragma once
+ 
+-#include <hidapi.h>
++#include <hidapi/hidapi.h>
+ 
+ #include "MSPBSL_PhysicalInterface.h"
+ 

@@ -45,4 +45,3 @@ jobs:
           cd mspdebug/libmsp430
           make
           sudo make install
-          
