@@ -13,12 +13,13 @@ jobs:
     name: Build MSPDebug
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout 
-    
+    steps:    
       - name: Install required libraries
         run: |
           sudo apt-get install libusb-1.0-0-dev libusb-dev libboost1.74-all-dev libhidapi-dev
+        
+      - name: Checkout libboost 1.74 patch
+        uses: actions/checkout@v3.0.0
         
       - name: Checkout MSPDebug code
         run: |
