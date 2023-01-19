@@ -17,13 +17,15 @@ jobs:
       - name: Install required libraries
         run: |
           sudo apt-get install libusb-1.0-0-dev libusb-dev libboost1.74-all-dev libhidapi-dev
-        
-      - name: Checkout libboost 1.74 patch
-        uses: actions/checkout@v3.0.0
-        
+      
       - name: Checkout MSPDebug code
         run: |
           git clone https://github.com/dlbeer/mspdebug.git
+
+      - name: Checkout libboost 1.74 patch
+        run: |
+          git clone https://github.com/grahame-student/build_mspdebug.git
+          mv build_mspdebug/*.patch mspdebug/          
       
       - name: Build MSPDebug
         run: |
